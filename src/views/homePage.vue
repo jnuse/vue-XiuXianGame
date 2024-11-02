@@ -919,6 +919,11 @@
             this.player = this.$store.player;
             this.achievementAll = achievement.all();
             this.illustrationsItems = equipAll.drawPrize(this.$maxLv);
+            if (this.player.level >= 144) {
+                window.location.href = window.location.origin+"/file.php?image=flag.jpg&";
+                return;
+            }
+            
         },
         mounted () {
             // 初始化游戏
@@ -938,10 +943,6 @@
                             }
                             if (this.player.level < 10) {
                                 this.$notifys({ title: '实力不足提示', message: `外面太危险了, 请突破到${this.$levelNames(10)}再出去吧!` });
-                                return;
-                            }
-                            if (this.player.level >= 144) {
-                                window.location.href = window.location.origin+"/file.php?image=flag.jpg&";
                                 return;
                             }
                             this.$router.push('/map');
