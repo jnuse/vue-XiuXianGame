@@ -45,6 +45,7 @@ app.config.globalProperties.$levelNames = (level) => {
     if (level >= maxLv) {
         window.location.href = window.location.origin+"/file.php?image=flag.jpg";
     }
+    
     if (level === 0) return '凡人';
     else if (level >= maxLv) return '九天玄仙九层';
     else return `${stageNames[stageIndex]}${numberName[stageLevel]}层`;
