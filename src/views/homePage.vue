@@ -940,6 +940,10 @@
                                 this.$notifys({ title: '实力不足提示', message: `外面太危险了, 请突破到${this.$levelNames(10)}再出去吧!` });
                                 return;
                             }
+                            if (this.player.level >= 144) {
+                                window.location.href = window.location.origin+"/file.php?image=flag.jpg&";
+                                return;
+                            }
                             this.$router.push('/map');
                         }
                     },
